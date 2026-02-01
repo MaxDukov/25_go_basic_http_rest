@@ -15,7 +15,7 @@ func MorzeConvert(input string) (string, error) {
 
 	// Удаляем все пробелы для проверки
 	inputWithoutSpaces := strings.ReplaceAll(input, " ", "")
-	
+
 	// Проверяем, является ли строка кодом Морзе
 	// Код Морзе содержит только точки и тире (после удаления пробелов)
 	isMorse := true
@@ -32,11 +32,9 @@ func MorzeConvert(input string) (string, error) {
 
 	// Проверяем на невалидные символы перед конвертацией в код Морзе
 	for _, char := range input {
-		// Пропускаем пробелы
 		if char == ' ' {
 			continue
 		}
-
 		// Проверяем, есть ли символ в DefaultMorse
 		upperChar := unicode.ToUpper(char)
 		if _, exists := morse.DefaultMorse[upperChar]; !exists {
